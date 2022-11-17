@@ -33,11 +33,11 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_name" />
 
         <EditText
-            android:id="@+id/edit_price"
+            android:id="@+id/edit_val"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Valor"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="@id/edit_descripition"
             app:layout_constraintStart_toStartOf="@id/edit_descripition"
             app:layout_constraintTop_toBottomOf="@id/edit_descripition" />

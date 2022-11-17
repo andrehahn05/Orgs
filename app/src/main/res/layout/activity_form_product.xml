@@ -1,50 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormProductActivity">
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/edit_name"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        tools:context=".FormProductActivity">
 
-    <EditText
-        android:id="@+id/edit_descripition"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Descrição"
-        app:layout_constraintEnd_toEndOf="@+id/edit_name"
-        app:layout_constraintStart_toStartOf="@+id/edit_name"
-        app:layout_constraintTop_toBottomOf="@+id/edit_name"/>
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nome"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_price"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Valor"
-        app:layout_constraintEnd_toEndOf="@id/edit_descripition"
-        app:layout_constraintStart_toStartOf="@id/edit_descripition"
-        app:layout_constraintTop_toBottomOf="@id/edit_descripition" />
+        <EditText
+            android:id="@+id/edit_descripition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Descrição"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/edit_name"
+            app:layout_constraintStart_toStartOf="@+id/edit_name"
+            app:layout_constraintTop_toBottomOf="@+id/edit_name" />
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Salvar"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        <EditText
+            android:id="@+id/edit_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Valor"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@id/edit_descripition"
+            app:layout_constraintStart_toStartOf="@id/edit_descripition"
+            app:layout_constraintTop_toBottomOf="@id/edit_descripition" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_save_prod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="10dp"
+            android:text="Salvar"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

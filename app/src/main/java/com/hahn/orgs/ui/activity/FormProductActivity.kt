@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.hahn.orgs.R
+import com.hahn.orgs.dao.ProductDao
 import com.hahn.orgs.model.Product
 import java.math.BigDecimal
 
@@ -33,7 +34,9 @@ class FormProductActivity : AppCompatActivity(R.layout.activity_form_product) {
                 description = descripition,
                 price = value
             )
-              Log.i("Form:","oncreate:  $newProduct")
+             val res =  ProductDao().store(newProduct)
+             Log.i("Form:","oncreate:  $res")
+             finish()
         }
     }
 }

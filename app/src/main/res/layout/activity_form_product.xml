@@ -12,7 +12,7 @@
         tools:context=".FormProductActivity">
 
         <EditText
-            android:id="@+id/edit_name"
+            android:id="@+id/activity_form_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -23,27 +23,27 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edit_descripition"
+            android:id="@+id/activity_form_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Descrição"
             android:inputType="text"
-            app:layout_constraintEnd_toEndOf="@+id/edit_name"
-            app:layout_constraintStart_toStartOf="@+id/edit_name"
-            app:layout_constraintTop_toBottomOf="@+id/edit_name" />
+            app:layout_constraintEnd_toEndOf="@+id/activity_form_name"
+            app:layout_constraintStart_toStartOf="@+id/activity_form_name"
+            app:layout_constraintTop_toBottomOf="@+id/activity_form_name" />
 
         <EditText
-            android:id="@+id/edit_val"
+            android:id="@+id/activity_form_val"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Valor"
             android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="@id/edit_descripition"
-            app:layout_constraintStart_toStartOf="@id/edit_descripition"
-            app:layout_constraintTop_toBottomOf="@id/edit_descripition" />
+            app:layout_constraintEnd_toEndOf="@id/activity_form_description"
+            app:layout_constraintStart_toStartOf="@id/activity_form_description"
+            app:layout_constraintTop_toBottomOf="@id/activity_form_description" />
 
         <Button
-            android:id="@+id/btn_save_prod"
+            android:id="@+id/btn_form_save_prod"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"

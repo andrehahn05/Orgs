@@ -1,5 +1,6 @@
 package com.hahn.orgs.ui.recyclerView.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +13,10 @@ import com.hahn.orgs.model.Product
 
 class ProductListAdapter(
     private val context: Context,
-    private val products: List<Product>
+    products: List<Product>
 ) : RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
+
+    private val products = products.toMutableList()
 
     class ViewHolder(View: View) : RecyclerView.ViewHolder(View) {
         fun bind_Product(product: Product) {
@@ -21,7 +24,7 @@ class ProductListAdapter(
             val description = itemView.findViewById<TextView>(R.id.txtView_description)
             val price = itemView.findViewById<TextView>(R.id.txtView_price)
 
-            name.text =  product.name
+            name.text = product.name
             description.text = product.description
             price.text = product.price.toPlainString()
 
@@ -29,7 +32,7 @@ class ProductListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater =  LayoutInflater.from(context)
+        val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.product_item, parent, false)
         return ViewHolder(view)
     }
@@ -40,5 +43,10 @@ class ProductListAdapter(
     }
 
     override fun getItemCount(): Int = products.size
+    fun update(products: List<Product>) {
+        this.products.clear()
+        this.products.addAll(products)
+        notifyDataSetChanged()
 
+    }
 }

@@ -9,12 +9,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:padding="5dp"
         android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/lorem/random" />
 
@@ -34,13 +33,24 @@
         android:id="@+id/prod_item_price"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="2dp"
         tools:text="22.59"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/prod_item_name"
         app:layout_constraintStart_toStartOf="@id/prod_item_name"
         app:layout_constraintTop_toBottomOf="@id/prod_item_description"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/prod_item_name"
+        app:srcCompat="@android:color/holo_purple"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:contentDescription="imagem produce" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

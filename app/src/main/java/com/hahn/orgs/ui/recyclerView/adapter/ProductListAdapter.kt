@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hahn.orgs.databinding.ProductItemBinding
 import com.hahn.orgs.model.Product
+import java.math.BigDecimal
+import java.text.NumberFormat
+import java.util.*
 
 class ProductListAdapter(
     private val context: Context, products: List<Product>
@@ -19,14 +22,22 @@ class ProductListAdapter(
         RecyclerView.ViewHolder(binding.root)
     {
 
-        fun bind_Product(product: Product)
+        fun bindProduct(product: Product)
         {
             val name = binding.prodItemName
             val description = binding.prodItemDescription
             val price = binding.prodItemPrice
             name.text = product.name
             description.text = product.description
-            price.text = product.price.toPlainString()
+            val valueCurrency: String = formatPtBr(product.price)
+            price.text = valueCurrency
+        }
+
+        private fun formatPtBr(price:BigDecimal): String
+        {
+            val formatter: NumberFormat = NumberFormat
+                .getCurrencyInstance(Locale("pt", "br"))
+            return formatter.format(price)
         }
     }
 
@@ -40,7 +51,7 @@ class ProductListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
         val product = products[position]
-        holder.bind_Product(product)
+        holder.bindProduct(product)
     }
 
     override fun getItemCount(): Int = products.size

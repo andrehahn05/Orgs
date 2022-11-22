@@ -49,8 +49,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/prod_item_name"
-        app:srcCompat="@android:color/holo_purple"
-        tools:srcCompat="@tools:sample/backgrounds/scenic"
-        android:contentDescription="imagem produce" />
+        app:srcCompat="@drawable/product_01"
+        tools:srcCompat="@drawable/product_01"
+        android:contentDescription="imagem produto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

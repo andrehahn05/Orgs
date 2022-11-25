@@ -54,7 +54,7 @@
             app:layout_constraintEnd_toEndOf="@id/prod_item_name"
             app:layout_constraintStart_toStartOf="@id/prod_item_name"
             app:layout_constraintTop_toBottomOf="@id/prod_item_description"
-            tools:text="22.59" />
+            tools:text="R$ 22.59" />
 
         <ImageView
             android:id="@+id/imageView"

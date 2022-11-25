@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.hahn.orgs.databinding.ProductItemBinding
 import com.hahn.orgs.model.Product
 import java.math.BigDecimal
@@ -31,9 +32,10 @@ class ProductListAdapter(
             description.text = product.description
             val valueCurrency: String = formatPtBr(product.price)
             price.text = valueCurrency
+            binding.imageView.load(product.image)
         }
 
-        private fun formatPtBr(price:BigDecimal): String
+        private fun formatPtBr(price: BigDecimal): String
         {
             val formatter: NumberFormat = NumberFormat
                 .getCurrencyInstance(Locale("pt", "br"))

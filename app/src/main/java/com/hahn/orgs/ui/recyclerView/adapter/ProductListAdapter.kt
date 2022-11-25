@@ -3,9 +3,11 @@ package com.hahn.orgs.ui.recyclerView.adapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.hahn.orgs.R
 import com.hahn.orgs.databinding.ProductItemBinding
 import com.hahn.orgs.model.Product
 import java.math.BigDecimal
@@ -32,7 +34,15 @@ class ProductListAdapter(
             description.text = product.description
             val valueCurrency: String = formatPtBr(product.price)
             price.text = valueCurrency
-            binding.imageView.load(product.image)
+
+            val visibility = if (product.image != null) View.VISIBLE else View.GONE
+
+            binding.imageView.visibility = visibility
+
+            binding.imageView.load(product.image) {
+                fallback(R.drawable.erro)
+                error(R.drawable.erro)
+            }
         }
 
         private fun formatPtBr(price: BigDecimal): String

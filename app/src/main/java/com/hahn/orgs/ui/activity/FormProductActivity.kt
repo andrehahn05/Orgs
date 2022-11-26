@@ -32,10 +32,11 @@ class FormProductActivity : AppCompatActivity()
                 val url: String = bindingForm.formImgUrl.text.toString()
                 bindingForm.formImageViewImg.load(url)
             }
+
             AlertDialog.Builder(this)
                 .setView(bindingForm.root)
                 .setPositiveButton("Confirmar") { _, _ ->
-                    this.url = bindingForm.formImgUrl.text.toString()
+                    url = bindingForm.formImgUrl.text.toString()
                     binding.activityFormImageView.load(url)
                 }
                 .setNegativeButton("Cancelar") { _, _ ->

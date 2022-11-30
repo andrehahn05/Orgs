@@ -10,6 +10,7 @@ import com.hahn.orgs.R
 import com.hahn.orgs.dao.ProductDao
 import com.hahn.orgs.databinding.ActivityFormProductBinding
 import com.hahn.orgs.databinding.FormImageBinding
+import com.hahn.orgs.extensions.tryloadimage
 import com.hahn.orgs.model.Product
 import java.math.BigDecimal
 
@@ -30,14 +31,14 @@ class FormProductActivity : AppCompatActivity()
             val bindingForm = FormImageBinding.inflate(layoutInflater)
             bindingForm.formImgBtnLoad.setOnClickListener {
                 val url: String = bindingForm.formImgUrl.text.toString()
-                bindingForm.formImageViewImg.load(url)
+                bindingForm.formImageViewImg.tryloadimage(url)
             }
 
             AlertDialog.Builder(this)
                 .setView(bindingForm.root)
                 .setPositiveButton("Confirmar") { _, _ ->
                     url = bindingForm.formImgUrl.text.toString()
-                    binding.activityFormImageView.load(url)
+                    binding.activityFormImageView.tryloadimage(url)
                 }
                 .setNegativeButton("Cancelar") { _, _ ->
                 }

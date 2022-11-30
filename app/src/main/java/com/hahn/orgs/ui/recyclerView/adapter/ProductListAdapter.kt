@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.hahn.orgs.R
 import com.hahn.orgs.databinding.ProductItemBinding
+import com.hahn.orgs.extensions.tryloadimage
 import com.hahn.orgs.model.Product
 import java.math.BigDecimal
 import java.text.NumberFormat
@@ -39,10 +40,7 @@ class ProductListAdapter(
 
             binding.imageView.visibility = visibility
 
-            binding.imageView.load(product.image) {
-                fallback(R.drawable.erro)
-                error(R.drawable.erro)
-            }
+            binding.imageView.tryloadimage(product.image)
         }
 
         private fun formatPtBr(price: BigDecimal): String

@@ -7,22 +7,33 @@ import com.hahn.orgs.databinding.FormImageBinding
 import com.hahn.orgs.extensions.tryloadimage
 
 class FormImageDialog(private val context: Context) {
-    fun showDialog(handleWhenLoad: (image: String) -> Unit) {
-        val binding = FormImageBinding.inflate(LayoutInflater.from(context))
-        binding.formImgBtnLoad.setOnClickListener {
-            val url: String = binding.formImgUrl.text.toString()
-            binding.formImageViewImg.tryloadimage(url)
-        }
+    fun showDialog(
+        urlDefault: String? = null,
+        handleWhenLoad: (image: String) -> Unit
+    ) {
+        val binding = FormImageBinding
+            .inflate(LayoutInflater.from(context)).apply {
+                urlDefault?.let {
+                    formImageViewImg.tryloadimage(it)
+                    formImgUrl.setText(it)
+                }
+                
+                formImgBtnLoad.setOnClickListener {
+                    val url: String = formImgUrl.text.toString()
+                    formImageViewImg.tryloadimage(url)
+                }
         
-        AlertDialog.Builder(context)
-            .setView(binding.root)
-            .setPositiveButton("Confirmar") { _, _ ->
-                val url = binding.formImgUrl.text.toString()
-                handleWhenLoad(url)
+                AlertDialog.Builder(context)
+                    .setView(root)
+                    .setPositiveButton("Confirmar") { _, _ ->
+                        val url = formImgUrl.text.toString()
+                        handleWhenLoad(url)
+                    }
+                    .setNegativeButton("Cancelar") { _, _ ->
+                    }
+                    .show()
             }
-            .setNegativeButton("Cancelar") { _, _ ->
-            }
-            .show()
+        
     }
 }
 

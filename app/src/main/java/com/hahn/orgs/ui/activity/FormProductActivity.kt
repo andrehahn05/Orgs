@@ -22,7 +22,7 @@ class FormProductActivity : AppCompatActivity() {
         confgBtnSave()
         binding.activityFormImageView.setOnClickListener {
             FormImageDialog(this)
-                .showDialog { image ->
+                .showDialog(url) { image ->
                     url = image
                     binding.activityFormImageView.tryloadimage(url)
                 }

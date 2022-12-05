@@ -19,6 +19,7 @@ class FormProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        title = "Cadastar Produto"
         confgBtnSave()
         binding.activityFormImageView.setOnClickListener {
             FormImageDialog(this)

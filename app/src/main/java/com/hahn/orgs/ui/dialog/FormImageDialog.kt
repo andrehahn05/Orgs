@@ -11,7 +11,7 @@ class FormImageDialog(private val context: Context) {
         urlDefault: String? = null,
         handleWhenLoad: (image: String) -> Unit
     ) {
-        val binding = FormImageBinding
+        FormImageBinding
             .inflate(LayoutInflater.from(context)).apply {
                 urlDefault?.let {
                     formImageViewImg.tryloadimage(it)

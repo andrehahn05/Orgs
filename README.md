@@ -34,11 +34,6 @@ Tela de detalhes do produto
 ## 📁 Acesso ao projeto
 
 Você pode clonar com git clone git@github.com:andrehahn05/Orgs.git
-======
-v2
-Você pode pode [baixar-lo](https://github.com/andrehahn05/Orgs/archive/refs/heads/v2.zip) zip
-======
 Você pode pode [baixar-lo](https://github.com/andrehahn05/Orgs/archive/refs/heads/main.zip) zip
-main
 
 O Android Studio deve executar algumas tasks do Gradle para configurar o projeto, aguarde até finalizar. Ao finalizar as tasks, você pode executar o App 🏆 

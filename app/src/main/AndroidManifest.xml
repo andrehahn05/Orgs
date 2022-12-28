@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orgs">
+        <activity android:name=".ui.activity.DetailsProductActivity" />
         <activity android:name=".ui.activity.FormProductActivity"/>
         <activity
             android:name=".ui.activity.ListProductActivity"

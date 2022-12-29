@@ -6,19 +6,19 @@ import java.math.BigDecimal
 class ProductDao
 {
 
-    fun store(product: Product)
+    fun store(product: Product<Any?>)
     {
         products.add(product)
     }
 
-    fun findAll(): List<Product>
+    fun findAll(): List<Product<Any?>>
     {
         return products.toList()
     }
 
     companion object
     {
-        private val products = mutableListOf<Product>(
+        private val products = mutableListOf<Product<Any?>>(
             Product(
                 name = "Frutas",
                 description = "um pouco de tudo",

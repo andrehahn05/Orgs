@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.hahn.orgs.R
 import com.hahn.orgs.databinding.ProductItemBinding
+import com.hahn.orgs.extensions.formatPtBr
 import com.hahn.orgs.extensions.tryloadimage
 import com.hahn.orgs.model.Product
 import java.math.BigDecimal
@@ -16,7 +17,7 @@ import java.text.NumberFormat
 import java.util.*
 
 class ProductListAdapter(
-    private val context: Context, products: List<Product>
+    private val context: Context, products: List<Product<Any?>>
 ) : RecyclerView.Adapter<ProductListAdapter.ViewHolder>()
 {
 
@@ -26,14 +27,14 @@ class ProductListAdapter(
         RecyclerView.ViewHolder(binding.root)
     {
 
-        fun bindProduct(product: Product)
+        fun bindProduct(product: Product<Any?>)
         {
             val name = binding.prodItemName
             val description = binding.prodItemDescription
             val price = binding.prodItemPrice
             name.text = product.name
             description.text = product.description
-            val valueCurrency: String = formatPtBr(product.price)
+            val valueCurrency: String = product.price.formatPtBr()
             price.text = valueCurrency
 
             val visibility = if (product.image != null) View.VISIBLE else View.GONE
@@ -43,12 +44,7 @@ class ProductListAdapter(
             binding.imageView.tryloadimage(product.image)
         }
 
-        private fun formatPtBr(price: BigDecimal): String
-        {
-            val formatter: NumberFormat = NumberFormat
-                .getCurrencyInstance(Locale("pt", "br"))
-            return formatter.format(price)
-        }
+        
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
@@ -67,7 +63,7 @@ class ProductListAdapter(
     override fun getItemCount(): Int = products.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun update(products: List<Product>)
+    fun update(products: List<Product<Any?>>)
     {
         this.products.clear()
         this.products.addAll(products)

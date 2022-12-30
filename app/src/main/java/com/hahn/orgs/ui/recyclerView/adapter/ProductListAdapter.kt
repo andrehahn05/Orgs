@@ -6,20 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import com.hahn.orgs.R
 import com.hahn.orgs.databinding.ProductItemBinding
 import com.hahn.orgs.extensions.formatPtBr
 import com.hahn.orgs.extensions.tryloadimage
 import com.hahn.orgs.model.Product
-import java.math.BigDecimal
-import java.text.NumberFormat
 import java.util.*
 
 class ProductListAdapter(
     private val context: Context,
     products: List<Product>,
-    var handlerClickOnItem: (product: Product) -> Unit = {},
+    var handlerClickOnItem: (product: Product) -> Unit = {}
 ) : RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
     
     private val products = products.toMutableList()
@@ -37,6 +33,7 @@ class ProductListAdapter(
         }
         
         fun bindProduct(product: Product) {
+            this.product = product
             val name = binding.prodItemName
             val description = binding.prodItemDescription
             val price = binding.prodItemPrice

@@ -35,7 +35,7 @@ Você pode clonar projeto
 ```
 git clone git@github.com:andrehahn05/Orgs.git
 ```
-ou
+or
 
 Você pode pode [baixar-lo](https://github.com/andrehahn05/Orgs/archive/refs/heads/main.zip) zip
 

@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.hahn.orgs.R
 import com.hahn.orgs.dao.ProductDao
 import com.hahn.orgs.databinding.ActivityListProductBinding
 import com.hahn.orgs.ui.recyclerView.adapter.ProductListAdapter
@@ -40,6 +39,14 @@ class ListProductActivity : AppCompatActivity() {
     
     private fun configRecyclerView() {
         val recyclerView = binding.activityListProdRecyclerView
-        recyclerView.adapter = this.adapter
+        recyclerView.adapter = adapter
+        adapter.handlerClickOnItem = {
+            val intent = Intent(this,
+                DetailsProductActivity::class.java
+            ).apply {
+                putExtra(KEY_PRODUCT, it)
+            }
+            startActivity(intent)
+        }
     }
 }

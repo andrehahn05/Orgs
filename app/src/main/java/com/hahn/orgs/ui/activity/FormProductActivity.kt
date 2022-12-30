@@ -41,7 +41,7 @@ class FormProductActivity : AppCompatActivity() {
         }
     }
     
-    private fun createProduct(): Product<Any?> {
+    private fun createProduct(): Product {
         val inputName = binding.activityFormName
         val inputDescription = binding.activityFormDescription
         val inputPrice = binding.activityFormVal

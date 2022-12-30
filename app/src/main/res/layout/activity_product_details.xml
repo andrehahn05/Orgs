@@ -71,7 +71,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/activity_details_product_image"
-            tools:text="R$ 1299,99" />
+            tools:text="R$ 129,99" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -1,8 +1,4 @@
-# app-devProfile
-<h3 align="center"> 
-	🚧  Orgs Kotlin 🚀 Manutenção  ...  🚧
-</h3>
-# Orgs
+# App-Orgs
 
 App de simulação para o curso de personalização de UI no Android com Kotlin Escola Alura-Cursos
 
@@ -35,8 +31,12 @@ Tela de detalhes do produto
 
 
 ## 📁 Acesso ao projeto
+Você pode clonar projeto
+```
+git clone git@github.com:andrehahn05/Orgs.git
+```
+ou
 
-Você pode clonar com git clone git@github.com:andrehahn05/Orgs.git
 Você pode pode [baixar-lo](https://github.com/andrehahn05/Orgs/archive/refs/heads/main.zip) zip
 
 O Android Studio deve executar algumas tasks do Gradle para configurar o projeto, aguarde até finalizar. Ao finalizar as tasks, você pode executar o App 🏆 
